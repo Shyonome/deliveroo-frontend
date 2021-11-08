@@ -7,29 +7,23 @@ const Bunchs = ({ data }) => {
 
             <h2>{bunchs.name}</h2>
 
-            <div>
+            {bunchs.meals.map((elem, index) => {
+                return (
+                    <div key = {index} >
                 
-                <h3>{bunchs.meals[0].title}</h3>
+                        <h3>{elem.title}</h3>
 
-                <p>{bunchs.meals[0].description}</p>
+                        <p>{elem.description}</p>
 
-                <img className = "classic" src = {bunchs.meals[0].picture} alt="" />
+                        {elem.picture && <img className = "classic" src = {elem.picture} alt="" />}
 
-                {bunchs.meals[0].popular && <span>👌</span> }
+                        <span>{elem.price}</span>
 
-            </div>
+                        {elem.popular && <span>👌</span> }
 
-            <div>
-                
-                <h3>{bunchs.meals[1].title}</h3>
-
-                <p>{bunchs.meals[1].description}</p>
-
-                <img className = "classic" src = {bunchs.meals[1].picture} alt="" />
-
-                {bunchs.meals[1].popular && <span>👌</span> }
-
-            </div>
+                    </div>
+                )
+            })}
 
         </div>
     );
