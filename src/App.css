@@ -1,1 +1,14 @@
 /* Other rules */
+
+* {
+    box-sizing: border-box !important;
+}
+
+.classic {
+    height: 100px;
+    width: 100px;
+}
+
+.introduction {
+    border: 1px solid black;
+}
